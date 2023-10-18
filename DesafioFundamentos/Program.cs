@@ -6,22 +6,43 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
-                  "Digite o preço inicial:");
-precoInicial = Convert.ToDecimal(Console.ReadLine());
+Console.WriteLine("Seja bem-vindo ao sistema de estacionamento!");
 
-Console.WriteLine("Agora digite o preço por hora:");
-precoPorHora = Convert.ToDecimal(Console.ReadLine());
+// Valida entrada de 'precoInicial' como um decimal válido
+bool precoInicialValido = false;
+while (!precoInicialValido) {
+    Console.Write("Digite o preço inicial: ");
+
+    if (decimal.TryParse(Console.ReadLine(), out precoInicial)) {
+        precoInicialValido = true;
+    } else {
+        Console.Clear();
+        Console.WriteLine("Valor inválido. Digite um número decimal válido.");
+    }
+}
+
+// Valida entrada de 'precoPorHora' como um decimal válido
+bool precoPorHoraValido = false;
+while (!precoPorHoraValido) {
+    Console.Clear();
+    Console.Write("Agora, digite o preço por hora: ");
+
+    if (decimal.TryParse(Console.ReadLine(), out precoPorHora)) {
+        precoPorHoraValido = true;
+    } else {
+        Console.Clear();
+        Console.WriteLine("Valor inválido. Digite um número decimal válido.");
+    }
+}
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
-Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
+Estacionamento estacionamento = new Estacionamento(precoInicial, precoPorHora);
 
 string opcao = string.Empty;
 bool exibirMenu = true;
 
 // Realiza o loop do menu
-while (exibirMenu)
-{
+while (exibirMenu) {
     Console.Clear();
     Console.WriteLine("Digite a sua opção:");
     Console.WriteLine("1 - Cadastrar veículo");
@@ -29,18 +50,17 @@ while (exibirMenu)
     Console.WriteLine("3 - Listar veículos");
     Console.WriteLine("4 - Encerrar");
 
-    switch (Console.ReadLine())
-    {
+    switch (Console.ReadLine()) {
         case "1":
-            es.AdicionarVeiculo();
+            estacionamento.AdicionarVeiculo();
             break;
 
         case "2":
-            es.RemoverVeiculo();
+            estacionamento.RemoverVeiculo();
             break;
 
         case "3":
-            es.ListarVeiculos();
+            estacionamento.ListarVeiculos();
             break;
 
         case "4":
@@ -52,7 +72,7 @@ while (exibirMenu)
             break;
     }
 
-    Console.WriteLine("Pressione uma tecla para continuar");
+    Console.WriteLine("\nPressione uma tecla para continuar");
     Console.ReadLine();
 }
 

@@ -1,38 +1,36 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# Sistema de Estacionamento
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+Bem-vindo ao Sistema de Estacionamento! Este é um projeto de exemplo que demonstra como criar um sistema de estacionamento simples em .NET usando a linguagem C#.
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+Este projeto permite que você defina os preços iniciais e por hora de um estacionamento e realize as seguintes operações:
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+- Cadastrar veículo
+- Remover veículo
+- Listar veículos estacionados
 
-A classe contém três variáveis, sendo:
+## Informações
+Projeto desenvolvido como desafio de código sugerido pela plataforma Digital Innovation One - DIO, para aprimoramento dos fundamentos básicos ensinados sobre .NET e C#.
 
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
+## Pré-requisitos
 
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
+- [.NET SDK](https://dotnet.microsoft.com/download) instalado no seu sistema.
 
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
+## Como Usar
 
-A classe contém três métodos, sendo:
+1. Clone este repositório para o seu sistema local.
+2. Abra o terminal ou prompt de comando e navegue até a pasta do projeto.
+3. Compile o projeto usando o comando `dotnet build`.
+4. Execute o projeto usando o comando `dotnet run`.
+5. Siga as instruções no console para definir os preços iniciais e por hora.
+6. Escolha entre as opções do menu para adicionar, remover ou listar veículos estacionados.
 
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
+## Funcionalidades
 
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
+- Defina preços iniciais e por hora para o estacionamento.
+- Adicione veículos com base em sua placa.
+- Remova veículos e calcule o preço total com base no tempo estacionado.
+- Liste todos os veículos estacionados.
 
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
+## Contribuições
 
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
-
-
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests) para aprimorar este projeto.
